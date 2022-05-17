@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
   <PropertyGroup>
     <NoWarn>BL9993</NoWarn>
-    <TargetFrameworks>netstandard2.1;net5.0</TargetFrameworks>
+    <TargetFramework>net6.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
     <LangVersion>latest</LangVersion>
     <OutputType>Library</OutputType>
@@ -31,19 +31,21 @@
     <WarningsAsErrors />
     <NoWarn>1701;1702;CS8622;CS0219;CS8765;CS0659;CS8618;CS8625;CS8601;CS8603;CS8602;CS8600;CS8604;CS0169;CS0649;CS0414;CS0162;CS0660;CS0661;CS3021;CS0618;CS1717;CS0252;CS0652;CS0067;CS1998;CS0168;CS4014;CS8632;CS1591;CS1572;CS1573;CS1735;CS0105;CS8767;CS8629;CS0618;NU1701;CS807;CS8073;</NoWarn>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net5.0'">
-	<DefineConstants>NET5</DefineConstants>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
+	<DefineConstants>NET5_0_OR_GREATER</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="LibSassBuilder" Version="2.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Components" Condition="'$(TargetFramework)' == 'netstandard2.1'" Version="3.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Condition="'$(TargetFramework)' == 'netstandard2.1'" Version="3.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components" Condition="'$(TargetFramework)' == 'net5.0'" Version="5.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Condition="'$(TargetFramework)' == 'net5.0'" Version="5.0.0" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="6.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.5" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.18" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Microsoft.AspNetCore.Components" />
+    <None Remove="Microsoft.AspNetCore.Components.Web" />
+    <None Remove="System.Linq.Dynamic.Core" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="LICENSE.txt" Pack="true" PackagePath="" />
     <None Include="icon.png" Pack="true" PackagePath="" />
@@ -61,10 +63,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Sass Include="$(MSBuildProjectDirectory)/themes/*.scss" Exclude="$(MSBuildProjectDirectory)/themes/_*.scss" Condition="'$(TargetFramework)' == 'net5.0'" />
+    <Sass Include="$(MSBuildProjectDirectory)/themes/*.scss" Exclude="$(MSBuildProjectDirectory)/themes/_*.scss" Condition="'$(TargetFramework)' == 'net6.0'" />
   </ItemGroup>
 
-  <Target Name="MoveCss" AfterTargets="AfterCompile" Condition="'$(TargetFramework)' == 'net5.0'">
+  <Target Name="MoveCss" AfterTargets="AfterCompile" Condition="'$(TargetFramework)' == 'net6.0'">
     <ItemGroup>
         <CssFile Include="$(MSBuildProjectDirectory)/themes/*.css" />
     </ItemGroup>
