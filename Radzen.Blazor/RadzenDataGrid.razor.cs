@@ -28,7 +28,7 @@ namespace Radzen.Blazor
     /// </example>
     public partial class RadzenDataGrid<TItem> : PagedDataBoundComponent<TItem>
     {
-#if NET5
+#if NET5_0_OR_GREATER
         internal void SetAllowVirtualization(bool allowVirtualization)
         {
             AllowVirtualization = allowVirtualization;
@@ -90,7 +90,7 @@ namespace Radzen.Blazor
         {
             return new RenderFragment(builder =>
             {
-#if NET5
+#if NET5_0_OR_GREATER
                 if (AllowVirtualization)
                 {
                     if(AllowGrouping && Groups.Any() && !LoadData.HasDelegate)
@@ -906,7 +906,7 @@ namespace Radzen.Blazor
         /// <value>The empty template.</value>
         [Parameter]
         public RenderFragment EmptyTemplate { get; set; }
-#if NET5
+#if NET5_0_OR_GREATER
         /// <summary>
         /// Gets or sets a value indicating whether this instance is virtualized.
         /// </summary>
@@ -1174,7 +1174,7 @@ namespace Radzen.Blazor
 
         internal bool IsVirtualizationAllowed()
         {
-    #if NET5
+    #if NET5_0_OR_GREATER
             return AllowVirtualization;
     #else
             return false;
@@ -1357,7 +1357,7 @@ namespace Radzen.Blazor
             {
                 Count = 1;
             }
-#if NET5
+#if NET5_0_OR_GREATER
             if (AllowVirtualization)
             {
                 if(!LoadData.HasDelegate)
@@ -1388,7 +1388,7 @@ namespace Radzen.Blazor
             }
             else
             {
-#if NET5
+#if NET5_0_OR_GREATER
                 if (AllowVirtualization)
                 {
                     if(virtualize != null)
@@ -1860,7 +1860,7 @@ namespace Radzen.Blazor
                 }
                 else
                 {
-#if NET5
+#if NET5_0_OR_GREATER
                     itemToInsert = default(TItem);
                     if(virtualize != null)
                     {
@@ -1916,7 +1916,7 @@ namespace Radzen.Blazor
             }
             else
             {
-#if NET5
+#if NET5_0_OR_GREATER
                 if(virtualize != null)
                 {
                     await virtualize.RefreshDataAsync();
