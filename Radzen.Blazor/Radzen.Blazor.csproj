@@ -20,6 +20,17 @@
     <RepositoryUrl>https://github.com/radzenhq/radzen-blazor</RepositoryUrl>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningsAsErrors />
+    <NoWarn>1701;1702;CS8622;CS0219;CS8765;CS0659;CS8618;CS8625;CS8601;CS8603;CS8602;CS8600;CS8604;CS0169;CS0649;CS0414;CS0162;CS0660;CS0661;CS3021;CS0618;CS1717;CS0252;CS0652;CS0067;CS1998;CS0168;CS4014;CS8632;CS1591;CS1572;CS1573;CS1735;CS0105;CS8767;CS8629;CS0618;NU1701;CS807;CS8073;</NoWarn>
+    <DebugType>full</DebugType>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <WarningsAsErrors />
+    <NoWarn>1701;1702;CS8622;CS0219;CS8765;CS0659;CS8618;CS8625;CS8601;CS8603;CS8602;CS8600;CS8604;CS0169;CS0649;CS0414;CS0162;CS0660;CS0661;CS3021;CS0618;CS1717;CS0252;CS0652;CS0067;CS1998;CS0168;CS4014;CS8632;CS1591;CS1572;CS1573;CS1735;CS0105;CS8767;CS8629;CS0618;NU1701;CS807;CS8073;</NoWarn>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' == 'net5.0'">
 	<DefineConstants>NET5</DefineConstants>
   </PropertyGroup>
