@@ -55,18 +55,20 @@ We add new components and features on a regular basis.
 
 Short development cycle. We release as soon as new stuff is available. No more quarterly releases.
 
-## Support exceeding your expectations 
+## Support exceeding your expectations
 
 ### :speech_balloon: Community Support
+
 Everybody is welcome to visit the [Radzen Community forum](https://forum.radzen.com/). Join the growing community and participate in the discussions!
 
 ### :dart: Dedicated Support
 
 The Radzen team monitors the forum threads, but does not guarantee a response to every question. For guaranteed responses you may consider the dedicated support option.
 
-Dedicated support for the Radzen Blazor Components is available as part of the [Radzen Professional subscription](https://www.radzen.com/pricing/). 
+Dedicated support for the Radzen Blazor Components is available as part of the [Radzen Professional subscription](https://www.radzen.com/pricing/).
 
 Our flagship product [Radzen Studio](https://www.radzen.com/features/) provides tons of productivity features for Blazor developers:
+
 - The first in the industry WYSIWYG Blazor design time canvas
 - Scaffolding a complete CRUD applications from a database
 - Built-in security - authentication and authorization
@@ -79,8 +81,9 @@ Our flagship product [Radzen Studio](https://www.radzen.com/features/) provides 
 ### 1. Install
 
 Radzen Blazor Components are distributed as a [Radzen.Blazor nuget package](https://www.nuget.org/packages/Radzen.Blazor). You can add them to your project in one of the following ways
+
 - Install the package from command line by running `dotnet add package Radzen.Blazor`
-- Add the project from the Visual Nuget Package Manager 
+- Add the project from the Visual Nuget Package Manager
 - Manually edit the .csproj file and add a project reference
 
 ### 2. Import the namespace
@@ -89,15 +92,17 @@ Open the `_Imports.razor` file of your Blazor application and add this line `@us
 
 ### 3. Include a theme
 
-Open the `_Host.cshtml` file (server-side Blazor) or `wwwroot/index.html` (client-side Blazor) and include a theme CSS file by adding this snippet 
+Open the `_Host.cshtml` file (server-side Blazor) or `wwwroot/index.html` (client-side Blazor) and include a theme CSS file by adding this snippet
+
 ```html
 <link rel="stylesheet" href="_content/Radzen.Blazor/css/default.css">
 ```
+
 If you either add Bootstrap manually or don't use it at all, include this instead:
+
 ```html
 <link rel="stylesheet" href="_content/Radzen.Blazor/css/default-base.css">
 ```
-
 
 ### 4. Include Radzen.Blazor.js
 
@@ -108,12 +113,15 @@ Open the `_Host.cshtml` file (server-side Blazor) or `wwwroot/index.html` (clien
 ```
 
 ### 5. Use a component
-Use any Radzen Blazor component by typing its tag name in a Blazor page e.g. 
+
+Use any Radzen Blazor component by typing its tag name in a Blazor page e.g.
+
 ```html
 <RadzenButton Text="Hi"></RadzenButton>
 ```
 
 #### Data-binding a property
+
 ```razor
 <RadzenButton Text=@text />
 <RadzenTextBox @bind-Value=@text />
