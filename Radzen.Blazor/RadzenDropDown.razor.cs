@@ -122,17 +122,25 @@ namespace Radzen.Blazor
                         await LoadData.InvokeAsync(await GetLoadDataArgs());
                         reload = true;
                     }
-
-                    if (!Disabled)
+                    try
                     {
-                        await JSRuntime.InvokeVoidAsync("Radzen.preventArrows", Element);
-                        reload = true;
+                        if (!Disabled)
+                        {
+                            await JSRuntime.InvokeVoidAsync("Radzen.preventArrows", Element);
+                            reload = true;
+                        }
+
+                        if (reload)
+                        {
+                            StateHasChanged();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        Console.WriteLine("Error in RadzenDropDown line 139");
                     }
 
-                    if (reload)
-                    {
-                        StateHasChanged();
-                    }
                 }
             }
         }
