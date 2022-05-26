@@ -47,7 +47,7 @@ Paid support is available as part of the [Radzen Professional subscription](http
 
 The components are implemented in C# and take full advantage of the Blazor framework. They do not depend on or wrap existing JavaScript frameworks or libraries.
 
-Both **server-side** and **client-side** (WASM) Blazor are supported.
+Blazor Server and Blazor WebAssembly are fully supported.
 
 ### :seedling: Growing
 
@@ -92,8 +92,12 @@ Open the `_Imports.razor` file of your Blazor application and add this line `@us
 
 ### 3. Include a theme
 
+<<<<<<< HEAD
 Open the `_Host.cshtml` file (server-side Blazor) or `wwwroot/index.html` (client-side Blazor) and include a theme CSS file by adding this snippet
 
+=======
+Open `Pages\_Layout.cshtml` (Blazor Server .NET 6+), `Pages\_Host.cshtml` (Blazor Server before .NET 6) or `wwwroot/index.html` (Blazor WebAssembly) and include a theme CSS file by adding this snippet 
+>>>>>>> 14a9c94944d335d985c3ababb93be9eed5f5319a
 ```html
 <link rel="stylesheet" href="_content/Radzen.Blazor/css/default.css">
 ```
@@ -106,7 +110,7 @@ If you either add Bootstrap manually or don't use it at all, include this instea
 
 ### 4. Include Radzen.Blazor.js
 
-Open the `_Host.cshtml` file (server-side Blazor) or `wwwroot/index.html` (client-side Blazor) and include this snippet:
+Open `Pages\_Layout.cshtml` (Blazor Server .NET 6+), `Pages\_Host.cshtml` (Blazor Server before .NET 6) or `wwwroot/index.html` (Blazor WebAssembly) and include this snippet:
 
 ```html
 <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
